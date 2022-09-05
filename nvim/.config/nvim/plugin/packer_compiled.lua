@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/sach/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/Users/sach/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/kyazdani42/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/Users/sach/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -159,6 +164,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/sach/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/Users/sach/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
