@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip' -- Snippets plugin 
   use 'folke/lsp-colors.nvim' -- Adds colors to diagnostic text
 
+  use 'windwp/nvim-ts-autotag' --html/jsx tag completion
+
   -- status line
   use({
       'nvim-lualine/lualine.nvim',
