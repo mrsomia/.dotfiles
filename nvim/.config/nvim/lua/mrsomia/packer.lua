@@ -52,5 +52,8 @@ return require('packer').startup(function(use)
 
   use("nvim-treesitter/playground")
   use("romgrk/nvim-treesitter-context")
+
+  -- git plugins
+  use 'lewis6991/gitsigns.nvim'
 end)
 
