@@ -5,7 +5,7 @@ lualine.setup {
   options = {
     icons_enabled = true,
     -- icons require you to use a patched font
-    theme = 'ayu_dark',
+    theme = 'tokyonight',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
