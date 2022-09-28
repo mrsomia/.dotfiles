@@ -1,4 +1,4 @@
-nvim_tree = require("nvim-tree")
+--[[nvim_tree = require("nvim-tree")
 
 nvim_tree.setup({
   sort_by = "case_sensitive",
@@ -23,4 +23,4 @@ leader = vim.g.mapleader
 vim.keymap.set('n', leader..'t', function()
     nvim_tree.toggle()
 end)
-
+]]--

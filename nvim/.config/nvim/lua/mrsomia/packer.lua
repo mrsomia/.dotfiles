@@ -27,12 +27,12 @@ return require('packer').startup(function(use)
   })
 
   -- nvim-tree
-  use {
+  --[[use {
       'kyazdani42/nvim-tree.lua',
       requires = {
           'kyazdani42/nvim-web-devicons', -- optional, for file icons
       },
-  }
+  }]]--
 
   use 'windwp/nvim-autopairs'
   use 'norcalli/nvim-colorizer.lua'
