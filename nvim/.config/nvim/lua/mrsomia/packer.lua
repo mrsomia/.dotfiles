@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
   -- color scheme
   use("gruvbox-community/gruvbox")
   use("folke/tokyonight.nvim")
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use("nvim-treesitter/nvim-treesitter", {
     run = ":TSUpdate"
