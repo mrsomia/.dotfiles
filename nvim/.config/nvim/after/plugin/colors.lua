@@ -28,6 +28,8 @@ require("catppuccin").setup({
 	},
 	integrations = {
 		-- For various plugins integrations see https://github.com/catppuccin/nvim#integrations
+    cmp = true,
+    gitsigns = true,
 	},
 	color_overrides = {},
 	highlight_overrides = {},
