@@ -112,6 +112,7 @@ alias prd="pnpm run dev"
 alias nrd="pnpm run dev"
 alias nv="nvim"
 alias vi="nvim"
+alias ff="fzf | xargs nvim -"
 
 # Git
 alias gs="git status"
@@ -165,3 +166,4 @@ export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="/Users/sach/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export EDITOR="nvim"
+export FZF_DEFAULT_COMMAND='fd -H --type f --exclude "node_modules" --exclude ".git/*"'
