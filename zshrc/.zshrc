@@ -113,7 +113,7 @@ alias prd="pnpm run dev"
 alias nrd="pnpm run dev"
 alias nv="nvim"
 alias vi="nvim"
-alias ff="fzf | xargs nvim -"
+alias ff="$HOME/.dotfiles/scripts/ff.sh"
 
 # Git
 alias gs="git status"
@@ -138,5 +138,3 @@ export PATH="$PNPM_HOME:$PATH"
 # Gotta look cool
 export EDITOR="nvim"
 
-# Works with the ff alias above
-export FZF_DEFAULT_COMMAND='fd -H --type f --exclude "node_modules" --exclude ".git/*"'
