@@ -1,6 +1,5 @@
---[[
 -- catpuccin
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup({
 	transparent_background = true,
@@ -37,7 +36,7 @@ require("catppuccin").setup({
 	highlight_overrides = {},
 })
 
-vim.cmd [[colorscheme catppuccin]]--
+-- vim.cmd [[colorscheme catppuccin]]
 
 -- Tokyo night
 require("tokyonight").setup({
