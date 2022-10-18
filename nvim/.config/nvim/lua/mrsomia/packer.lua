@@ -17,6 +17,16 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin 
   use 'folke/lsp-colors.nvim' -- Adds colors to diagnostic text
+  use 'folke/trouble.nvim' -- Adds grouped diagnostics reporting
+
+  -- DAP -- Debugger
+  use 'mfussenegger/nvim-dap'
+  -- use "jayp0521/mason-nvim-dap.nvim" -- Intergrate Mason with DAP
+
+  use "williamboman/mason.nvim" --mason is used to auto install LSP/DAP/Linters
+  use "williamboman/mason-lspconfig.nvim"
+
+  use 'jose-elias-alvarez/null-ls.nvim' -- Linter/formatter
 
   use 'windwp/nvim-ts-autotag' --html/jsx tag completion
 
@@ -60,4 +70,3 @@ return require('packer').startup(function(use)
   -- Comment.nvim
   use 'numToStr/Comment.nvim'
 end)
-
