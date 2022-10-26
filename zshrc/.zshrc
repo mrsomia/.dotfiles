@@ -125,7 +125,7 @@ alias gc="git commit"
 alias cat="bat"
 
 # run z
-. /usr/local/etc/profile.d/z.sh
+. /opt/brew/etc/profile.d/z.sh
 
 # For NVM
 export NVM_DIR="$HOME/.nvm"
