@@ -128,9 +128,13 @@ alias cat="bat"
 . /opt/brew/etc/profile.d/z.sh
 
 # For NVM
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# Added after internal homebrew fork installed
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "/opt/brew/opt/nvm/nvm.sh" ] && \. "/opt/brew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/brew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/brew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
