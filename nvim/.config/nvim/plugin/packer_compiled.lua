@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/sach/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/gruvbox-community/gruvbox"
   },
+  harpoon = {
+    loaded = true,
+    path = "/Users/sach/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["lsp-colors.nvim"] = {
     loaded = true,
     path = "/Users/sach/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",

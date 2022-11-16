@@ -52,6 +52,9 @@ return require('packer').startup(function(use)
   use("nvim-telescope/telescope.nvim")
   use 'nvim-telescope/telescope-file-browser.nvim'
 
+  -- Harpoon
+  use 'ThePrimeagen/harpoon'
+
   -- color scheme
   use("gruvbox-community/gruvbox")
   use 'folke/tokyonight.nvim'

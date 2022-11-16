@@ -45,6 +45,7 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+telescope.load_extension('harpoon')
 
 local leader = vim.g.mapleader
 
@@ -58,7 +59,7 @@ vim.keymap.set('n', leader..'ff',
 vim.keymap.set('n', leader..'fg', function()
   builtin.live_grep()
 end)
-vim.keymap.set('n', leader..'\\\\', function()
+vim.keymap.set('n', leader..'fib', function()
   builtin.buffers()
 end)
 vim.keymap.set('n', leader..'fh', function()
