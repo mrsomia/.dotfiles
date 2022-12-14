@@ -3,7 +3,7 @@ harpoon.setup()
 
 local leader = vim.g.mapleader
 
-vim.keymap.set('n', leader .. 'hm', function()
+vim.keymap.set('n', leader .. 'm', function()
     require("harpoon.mark").add_file()
 end)
 
