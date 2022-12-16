@@ -1,11 +1,29 @@
 #!/usr/bin/env bash
+#
+# IDEA: Adds an optional argument
+# If it's a dir, search the dir
+# else search the current dir for that file
 
 IS_GIT=$(git rev-parse --is-inside-work-tree 2> /dev/null)
+PASSED=$1
 
-if [ "$IS_GIT" == 'true' ]
+# Checks if not args passed
+if [ $# -eq 0 ]
 then
-  fd -H --type f --exclude "node_modules" --exclude ".git/*" | fzf | xargs nvim - 
+    # searches and opens in nvim if this was run in a git dir
+    if [ "$IS_GIT" == 'true' ]
+    then
+        fd -H --type f --exclude "node_modules" --exclude ".git/*" | fzf | xargs nvim - 
+    else
+        fd --type f | fzf
+        exit
+    fi
 else
-  fd --type f | fzf
-  exit
+    if [ -d "${PASSED}" ] ; then
+        # if the passed arg is a dir, searches within that dir and passes this into nvim
+        fd -H --type f --exclude "node_modules" --exclude ".git/*" --full-path "$PASSED" | fzf | xargs nvim - 
+    else
+        # if not a dir uses the search term for the search
+        fd -H --type f --exclude "node_modules" --exclude ".git/*" | fzf -q "$PASSED"| xargs nvim - 
+    fi
 fi
