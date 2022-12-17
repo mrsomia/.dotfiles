@@ -9,22 +9,37 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
 
+    -- LSP Zero
+    use {
+      'VonHeikemen/lsp-zero.nvim', -- Simple LSP Config
+      requires = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'}, --LSP Client
+        {'williamboman/mason.nvim'}, -- used to auto install LSPs
+        {'williamboman/mason-lspconfig.nvim'},
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'}, -- Autocompletion plugin
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'saadparwaiz1/cmp_luasnip'}, -- Snippets source for nvim-cmp
+        {'hrsh7th/cmp-nvim-lsp'}, -- LSP source for nvim-cmp
+        {'hrsh7th/cmp-nvim-lua'},
+
+        -- Snippets
+        {'L3MON4D3/LuaSnip'}, -- Snippets plugin
+        {'rafamadriz/friendly-snippets'},
+      }
+    }
+
     -- LSP
-    use("neovim/nvim-lspconfig") --LSP client
     use 'onsails/lspkind-nvim' -- VS Code like icons in LSP
-    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'folke/lsp-colors.nvim' -- Adds colors to diagnostic text
     use 'folke/trouble.nvim' -- Adds grouped diagnostics reporting
 
     -- DAP -- Debugger
     use 'mfussenegger/nvim-dap'
-    -- use "jayp0521/mason-nvim-dap.nvim" -- Intergrate Mason with DAP
-
-    use "williamboman/mason.nvim" --mason is used to auto install LSP/DAP/Linters
-    use "williamboman/mason-lspconfig.nvim"
+    use "jayp0521/mason-nvim-dap.nvim" -- Intergrate Mason with DAP
 
     use 'jose-elias-alvarez/null-ls.nvim' -- Linter/formatter
 
