@@ -72,4 +72,7 @@ return require('packer').startup(function(use)
 
   -- Comment.nvim
   use 'numToStr/Comment.nvim'
+  use 'mbbill/undotree'
+  use 'tpope/vim-fugitive'
 end)
+
