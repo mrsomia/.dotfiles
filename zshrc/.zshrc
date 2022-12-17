@@ -114,6 +114,7 @@ alias nrd="pnpm run dev"
 alias nv="nvim"
 alias vi="nvim"
 alias ff="$HOME/.dotfiles/scripts/ff.sh"
+alias fs="$HOME/.dotfiles/scripts/ff.sh"
 
 # Git
 alias gs="git status"
