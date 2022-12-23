@@ -140,6 +140,10 @@ export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
+# Deno
+export DENO_INSTALL="/Users/sach/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # Gotta look cool
 export EDITOR="nvim"
 
