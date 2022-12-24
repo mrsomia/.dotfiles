@@ -44,3 +44,7 @@ vim.opt.shortmess:append("c")
 vim.opt.colorcolumn = "80" -- Where should the highlight column be
 
 vim.g.mapleader = " " -- my leader key
+
+vim.opt.splitright = true -- all vsplits will open the new file on the right 
+-- vim.opt.splitbelow = true -- default h splits to be on the bottom and not top
+
