@@ -1,35 +1,38 @@
+-- no GUI cursor
 vim.opt.guicursor = ""
 
+-- numbers and relative numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+-- no sound
 vim.opt.errorbells = false
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.tabstop = 4 -- tab distance
+vim.opt.softtabstop = 4 -- tab distance for tab
+vim.opt.shiftwidth = 4 -- tab distance for >
+vim.opt.expandtab = true -- convert tabs to spaces
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = false -- Do not wrap files
 
-vim.opt.swapfile = false
+vim.opt.swapfile = false -- use just RAM
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+vim.opt.undofile = true -- file for actions to complete undo
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+vim.opt.hlsearch = false -- highlights all search matches
+vim.opt.incsearch = true -- highlight match as you search
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.scrolloff = 8 -- leave at least 8 lines at the top of bottom of screen
+vim.opt.signcolumn = "yes" -- left column for signs
+vim.opt.isfname:append("@-@") -- include symbols in filenames
 
 -- Give more space for displaying messages.
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 1 -- command line remains permanently
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
@@ -38,6 +41,6 @@ vim.opt.updatetime = 50
 -- Don't pass messages to |ins-completion-menu|.
 vim.opt.shortmess:append("c")
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80" -- Where should the highlight column be
 
-vim.g.mapleader = " "
+vim.g.mapleader = " " -- my leader key
