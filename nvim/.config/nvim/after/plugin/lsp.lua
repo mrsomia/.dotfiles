@@ -58,6 +58,12 @@ local on_attach = function(client, bufnr)
       return
   end
 
+  if client.name == "pyright" or client.name == "rust-analyzer" then
+    vim.opt.tabstop = 4 -- tab distance
+    vim.opt.softtabstop = 4 -- tab distance for tab
+    vim.opt.shiftwidth = 4 -- tab distance for >
+  end
+
     -- Mappings
   -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
   -- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)

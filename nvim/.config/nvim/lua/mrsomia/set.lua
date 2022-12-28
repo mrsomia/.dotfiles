@@ -8,9 +8,9 @@ vim.opt.relativenumber = true
 -- no sound
 vim.opt.errorbells = false
 
-vim.opt.tabstop = 4 -- tab distance
-vim.opt.softtabstop = 4 -- tab distance for tab
-vim.opt.shiftwidth = 4 -- tab distance for >
+vim.opt.tabstop = 2 -- tab distance
+vim.opt.softtabstop = 2 -- tab distance for tab
+vim.opt.shiftwidth = 2 -- tab distance for >
 vim.opt.expandtab = true -- convert tabs to spaces
 
 vim.opt.smartindent = true
@@ -27,7 +27,7 @@ vim.opt.incsearch = true -- highlight match as you search
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8 -- leave at least 8 lines at the top of bottom of screen
+vim.opt.scrolloff = 8 -- leave at least 8 lines at the top or bottom of screen
 vim.opt.signcolumn = "yes" -- left column for signs
 vim.opt.isfname:append("@-@") -- include symbols in filenames
 
