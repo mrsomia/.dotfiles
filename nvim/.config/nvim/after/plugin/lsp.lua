@@ -102,3 +102,19 @@ lsp.on_attach(on_attach)
 
 lsp.setup()
 
+-- -- DAP
+-- local dap = require('dap')
+--
+-- -- KeyMaps for DAP
+-- --
+--
+-- vim.keymap.set('n', '<leader><leader>', function() dap.close() end)
+-- vim.keymap.set('n', '<Up>', function() dap.continue() end)
+-- vim.keymap.set('n', '<Down>', function() dap.step_over() end)
+-- vim.keymap.set('n', '<Left>', function() dap.step_out() end)
+-- vim.keymap.set('n', '<Right>', function() dap.step_into() end)
+-- vim.keymap.set('n', '<leader>dl', function() dap.run_last() end)
+-- vim.keymap.set('n', '<leader>b', function() dap.toggle_breakpoint() end)
+--
+-- require("mason-nvim-dap").setup()
+
