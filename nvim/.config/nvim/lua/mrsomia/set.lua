@@ -11,6 +11,7 @@ vim.opt.errorbells = false
 vim.opt.tabstop = 2 -- tab distance
 vim.opt.softtabstop = 2 -- tab distance for tab
 vim.opt.shiftwidth = 2 -- tab distance for >
+vim.opt.shiftround = true -- rounds up indent spacing for pasted text
 vim.opt.expandtab = true -- convert tabs to spaces
 
 vim.opt.smartindent = true

@@ -14,6 +14,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- Keeps search terms in the centre
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set('n', '*', '*zz', {desc = 'Search and center screen'})
 
 -- greatest remap ever
 -- let's you paste but not add the pasted over text to the last register

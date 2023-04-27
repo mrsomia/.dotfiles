@@ -124,6 +124,7 @@ alias gc="git commit"
 
 # Rust based rewrites
 alias cat="bat"
+alias c="code"
 
 # run z
 . /opt/brew/etc/profile.d/z.sh
@@ -144,6 +145,11 @@ export PATH="$PNPM_HOME:$PATH"
 export DENO_INSTALL="/Users/sach/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# Lunarvim
+export PATH="$HOME/.local/bin:$PATH"
+
 # Gotta look cool
 export EDITOR="nvim"
 
+# Start rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
