@@ -7,24 +7,21 @@ echo Installing HomeBrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo Installing utils
-brew install bat fd fzf git gh gum jq lua-language-server neovim nvm postgresql\
-  ripgrep sqlite stow tmux trash tree tree-sitter wget xz z
+brew install bat fd fzf git gh gum jq neovim nvm postgresql python ripgrep\
+  sqlite stow tmux trash tree tree-sitter wget xz z
 
 brew install --cask raycast
 
-echo symlinking/configuring some dotfiles
-cd ~/.dotfiles
-stow git
-stow nvim
-stow zshrc
+echo symlinking dotfiles
+stow -t ~/.config ~/.dotfiles/config
 
 echo installing node
 nvm install node
 npm i -g pnpm
 pnpm add -g typescript typescript-language-server tsx netlify-cli vercel
 
-echo installing pyright server
-pip3 install pyright
+# echo installing pyright server
+# pip3 install pyright
 
 echo Installing packer so that neovim can install packages
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
