@@ -1,12 +1,6 @@
---[[
- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
- `lvim` is the global options object
-]]
-
--- vim options
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.relativenumber = true
+reload("user.options")
+reload("user.maps")
+reload("user.plugins")
 
 -- general
 lvim.log.level = "info"
@@ -31,12 +25,12 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- -- Change theme settings
--- lvim.colorscheme = "lunar"
+lvim.colorscheme = "tokyonight"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Automatically install missing parsers when entering buffer
