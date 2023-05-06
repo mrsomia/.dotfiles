@@ -112,7 +112,7 @@ alias sz="source ~/.zshrc"
 alias prd="pnpm run dev"
 alias nrd="pnpm run dev"
 alias nv="nvim"
-alias vi="nvim"
+alias vim="lvim"
 alias ff="$HOME/.dotfiles/scripts/ff.sh"
 alias fs="$HOME/.dotfiles/scripts/ff.sh"
 
@@ -149,7 +149,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Gotta look cool
-export EDITOR="nvim"
+export EDITOR="lvim"
 
 # Start rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
