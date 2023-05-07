@@ -25,7 +25,25 @@ lvim.plugins = {
     end
   },
   { "mbbill/undotree" },
-  { "tpope/vim-fugitive" },
+  {
+    "tpope/vim-fugitive",
+    cmd = {
+      "G",
+      "Git",
+      "Gdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "GMove",
+      "GDelete",
+      "GBrowse",
+      "GRemove",
+      "GRename",
+      "Glgrep",
+      "Gedit"
+    },
+    ft = { "fugitive" }
+  },
   -- { 'jose-elias-alvarez/typescript.nvim' }, -- typescript?
   {
     "windwp/nvim-ts-autotag",

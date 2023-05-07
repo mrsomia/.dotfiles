@@ -113,6 +113,9 @@ wk.mappings["W"] = {
   s = { ":lua require('telescope-tabs').list_tabs()<cr>", 'Search Tabs' },
 }
 
-wk.mappings["g"]["s"] = { ":Git", "Fugitvie" }
+wk.mappings["g"]["s"] = { ":Git<cr>", "Fugitvie" }
+wk.mappings["g"]["S"] = { ":Gitsigns stage_hunk<cr>", "Stage Hunk" }
+
+wk.mappings["u"] = { ":UndotrooToggle<cr>", "Undotree" }
 
 -- wk.mappings['x'] = { ":xa<cr>", "Save All and Quit", }

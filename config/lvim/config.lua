@@ -1,6 +1,7 @@
 reload("user.options")
 reload("user.maps")
 reload("user.plugins")
+reload("user.lualine")
 
 -- general
 lvim.log.level = "info"
@@ -26,7 +27,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- -- Change theme settings
 lvim.colorscheme = "tokyonight"
-lvim.transparent_window = true
+-- lvim.transparent_window = true
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
