@@ -58,7 +58,7 @@ wk.mappings[";"] = nil
 
 wk.mappings["S"] = {
   name = " persistence.nvim",
-  s = { "<cmd>lua require('persistence').load()<cr>", kind.icons.clock .. " Reload last session for dir" },
+  S = { "<cmd>lua require('persistence').load()<cr>", kind.icons.clock .. " Reload last session for dir" },
   l = { "<cmd>lua require('persistence').load({ last = true })<cr>", kind.icons.clock .. " Restore last session" },
   Q = { "<cmd>lua require('persistence').stop()<cr>", kind.icons.exit .. " Quit without saving session" },
 }
@@ -118,6 +118,6 @@ wk.mappings["W"] = {
 wk.mappings["g"]["s"] = { ":Git<cr>", "Fugitvie" }
 wk.mappings["g"]["S"] = { ":Gitsigns stage_hunk<cr>", "Stage Hunk" }
 
-wk.mappings["u"] = { ":UndotrooToggle<cr>", "Undotree" }
+wk.mappings["u"] = { ":UndotreeToggle<cr>", "Undotree" }
 
 -- wk.mappings['x'] = { ":xa<cr>", "Save All and Quit", }
