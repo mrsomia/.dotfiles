@@ -10,20 +10,20 @@ PASSED=$1
 # Checks if not args passed
 if [ $# -eq 0 ]
 then
-    # searches and opens in nvim if this was run in a git dir
+    # searches and opens in lvim if this was run in a git dir
     if [ "$IS_GIT" == 'true' ]
     then
-        fd -H --type f --exclude "node_modules" --exclude ".git/*" | fzf | xargs nvim - 
+        fd -H --type f --exclude "node_modules" --exclude ".git/*" | fzf | xargs lvim - 
     else
         fd --type f | fzf
         exit
     fi
 else
     if [ -d "${PASSED}" ] ; then
-        # if the passed arg is a dir, searches within that dir and passes this into nvim
-        fd -H --type f --exclude "node_modules" --exclude ".git/*" --full-path "$PASSED" | fzf | xargs nvim - 
+        # if the passed arg is a dir, searches within that dir and passes this into lvim
+        fd -H --type f --exclude "node_modules" --exclude ".git/*" --full-path "$PASSED" | fzf | xargs lvim - 
     else
         # if not a dir uses the search term for the search
-        fd -H --type f --exclude "node_modules" --exclude ".git/*" | fzf -q "$PASSED"| xargs nvim - 
+        fd -H --type f --exclude "node_modules" --exclude ".git/*" | fzf -q "$PASSED"| xargs lvim - 
     fi
 fi
