@@ -2,6 +2,7 @@ reload("user.options")
 reload("user.maps")
 reload("user.plugins")
 reload("user.lualine")
+reload("user.lsp")
 
 -- general
 lvim.log.level = "info"

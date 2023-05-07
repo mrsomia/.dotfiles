@@ -15,3 +15,13 @@ lvim.lsp.buffer_mappings.normal_mode["gD"] = {
   ":lua vim.lsp.buf.type_definition()<cr>",
   kind.cmp_kind.Reference .. " Type Definition"
 }
+
+lvim.lsp.buffer_mappings.normal_mode["]d"] = {
+  ":lua vim.diagnostic.goto_next()<cr>",
+  "Next diagnostic",
+}
+
+lvim.lsp.buffer_mappings.normal_mode["[d"] = {
+  ":lua vim.diagnostic.goto_prev()<cr>",
+  "Previous diagnostic",
+}

@@ -82,6 +82,8 @@ wk.mappings["f"] = {
   w = { ":Telescope live_grep<cr>", "Grep String" },
   p = { ':Telescope projects<cr>', 'Projects' }, -- requires telescope-project.nvim plugin
   r = { ':Telescope resume<cr>', 'Resume' },
+  h = { ":Telescope help_tags<cr>", "Help Tags" },
+  b = { ":Telescope buffers<cr>", "Buffers" },
 }
 -- wk.mappings["f"]["w"] = {
 --   "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') })<cr>",
