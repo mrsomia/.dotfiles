@@ -25,3 +25,5 @@ lvim.lsp.buffer_mappings.normal_mode["[d"] = {
   ":lua vim.diagnostic.goto_prev()<cr>",
   "Previous diagnostic",
 }
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
