@@ -27,7 +27,7 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- -- Change theme settings
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "tokyonight-night"
 -- lvim.transparent_window = true
 
 lvim.builtin.alpha.active = true
