@@ -14,7 +14,8 @@ then
     if [ "$IS_GIT" == 'true' ]
     then
         fd -H --type f --exclude "node_modules" --exclude ".git/*" |
-          fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% |
+          fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
+          --bind ctrl-u:preview-page-up,ctrl-d:preview-page-down |
           xargs lvim -
     else
         fd --type f | fzf
@@ -24,12 +25,14 @@ else
     if [ -d "${PASSED}" ] ; then
         # if the passed arg is a dir, searches within that dir and passes this into lvim
         fd -H --type f --exclude "node_modules" --exclude ".git/*" --full-path "$PASSED" |
-          fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% |
+          fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
+          --bind ctrl-u:preview-page-up,ctrl-d:preview-page-down |
           xargs lvim -
     else
         # if not a dir uses the search term for the search
         fd -H --type f --exclude "node_modules" --exclude ".git/*" |
-          fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65%  -q "$PASSED" |
+          fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
+          --bind ctrl-u:preview-page-up,ctrl-d:preview-page-down -q "$PASSED" |
           xargs lvim -
     fi
 fi
