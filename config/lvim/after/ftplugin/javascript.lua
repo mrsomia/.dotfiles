@@ -1,0 +1,1 @@
+reload("ftplugin.typescript")

@@ -29,3 +29,7 @@ lvim.lsp.buffer_mappings.normal_mode["[d"] = {
 
 -- Stop pylyzer starting up
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pylyzer" })
+
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+  return server ~= "eslint"
+end, lvim.lsp.automatic_configuration.skipped_servers)
