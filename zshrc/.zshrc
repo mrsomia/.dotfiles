@@ -107,6 +107,8 @@ alias vs="open -a 'Visual Studio Code'"
 alias sublime="open -a 'Sublime Text'"
 alias subl="open -a 'Sublime Text'"
 # alias idea="open -a 'IntelliJ IDEA CE'"
+alias c="code"
+alias lg="lazygit"
 
 alias sz="source ~/.zshrc"
 alias prd="pnpm run dev"
@@ -124,7 +126,6 @@ alias gc="git commit"
 
 # Rust based rewrites
 alias cat="bat"
-alias c="code"
 
 # run z
 . /opt/brew/etc/profile.d/z.sh
