@@ -7,7 +7,7 @@ echo Installing HomeBrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo Installing utils
-brew install bat fd fzf git gh gum jq neovim nvm postgresql python ripgrep\
+brew install bat exa fd fzf git gh gum jq neovim nvm postgresql python ripgrep\
   sqlite stow tmux trash tree tree-sitter wget xz z
 
 brew install --cask raycast
