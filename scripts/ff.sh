@@ -18,7 +18,9 @@ then
           --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down |
           xargs lvim -
     else
-        fd --type f | fzf
+        fd -H --type f --exclude "node_modules" --exclude ".git/*" |
+          fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
+          --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down
         exit
     fi
 else
