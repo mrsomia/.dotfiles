@@ -7,7 +7,7 @@ local wk = lvim.builtin.which_key
 
 -- Move highlighted lines
 lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
-lvim.keys.visual_mode["K"] = ":m '>-2<CR>gv=gv"
+lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 -- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
