@@ -28,6 +28,19 @@ lvim.keys.normal_mode["N"] = "Nzzzv"
 lvim.keys.normal_mode["*"] = "*zz"
 -- vim.keymap.set('n', '*', '*zz', { desc = 'Search and center screen' })
 
+-- format just slected area
+lvim.lsp.buffer_mappings.visual_mode["<leader>lf"] = { function()
+  vim.lsp.buf.format({
+    -- async = true, -- Add to make this Asynx
+    range = {
+      ["start"] = vim.api.nvim_buf_get_mark(0, "<"),
+      ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
+    }
+  })
+end,
+  "Format Selected"
+}
+
 -- greatest remap ever
 -- let's you paste but not add the pasted over text to the last register
 vim.keymap.set("x", "<leader>p", [["_dP]])
