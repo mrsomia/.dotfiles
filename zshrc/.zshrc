@@ -131,6 +131,9 @@ alias gc="git commit"
 # Rust based rewrites
 alias cat="bat"
 
+# tldr
+alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,65% | xargs tldr'
+
 # run z
 . /opt/brew/etc/profile.d/z.sh
 
