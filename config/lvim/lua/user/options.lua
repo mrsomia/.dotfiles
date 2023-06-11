@@ -48,6 +48,3 @@ vim.opt.updatetime = 50
 
 vim.opt.splitright = true  -- all vsplits will open the new file on the right
 vim.opt.splitbelow = false -- default h splits to be on the bottom and not top
-
-lvim.format_on_save.enabled = true
-lvim.format_on_save.pattern = { "*.lua", "*.py" }
