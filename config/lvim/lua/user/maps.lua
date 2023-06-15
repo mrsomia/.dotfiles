@@ -92,7 +92,7 @@ wk.mappings["f"] = {
     end,
     "Find files"
   },
-  w = { ":Telescope live_grep<cr>", "Grep String" },
+  s = { ":Telescope live_grep<cr>", "Grep String" },
   p = { ':Telescope projects<cr>', 'Projects' }, -- requires telescope-project.nvim plugin
   r = { ':Telescope resume<cr>', 'Resume' },
   h = { ":Telescope help_tags<cr>", "Help Tags" },
