@@ -133,4 +133,10 @@ wk.mappings["g"]["S"] = { ":Gitsigns stage_hunk<cr>", "Stage Hunk" }
 
 wk.mappings["u"] = { ":UndotreeToggle<cr>", "Undotree" }
 
+wk.mappings["D"] = {
+  name = "Dadbod",
+  b = { ":DBUIToggle<cr>", "DBUIToggle" },
+  B = { ":DBUIToggle<cr>", "DBUIToggle" },
+}
+
 -- wk.mappings['x'] = { ":xa<cr>", "Save All and Quit", }
