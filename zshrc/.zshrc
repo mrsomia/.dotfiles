@@ -127,6 +127,7 @@ alias gs="git status"
 alias gl="git log --graph --all --decorate --oneline"
 alias gaa="git add -A"
 alias gc="git commit"
+alias gla="git pull --all"
 
 # Rust based rewrites
 alias cat="bat"
