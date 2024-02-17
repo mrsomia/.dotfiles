@@ -163,3 +163,10 @@ export EDITOR="lvim"
 
 # Start rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# bun completions
+[ -s "/Users/sach/.bun/_bun" ] && source "/Users/sach/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
