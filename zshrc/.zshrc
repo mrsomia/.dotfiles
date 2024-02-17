@@ -136,7 +136,8 @@ alias cat="bat"
 alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,65% | xargs tldr'
 
 # run z
-. /opt/brew/etc/profile.d/z.sh
+# . /opt/homebrew/etc/profile.d/z.sh
+eval "$(zoxide init zsh)"
 
 # For NVM
 # export NVM_DIR="$HOME/.nvm"
