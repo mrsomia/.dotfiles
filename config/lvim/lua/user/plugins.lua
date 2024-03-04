@@ -1,5 +1,9 @@
 lvim.plugins = {
   { "lunarvim/colorschemes" },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
   { "folke/tokyonight.nvim" },
   { "ThePrimeagen/harpoon" },
   { "christoomey/vim-tmux-navigator" },
