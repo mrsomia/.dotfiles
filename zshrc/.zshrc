@@ -170,3 +170,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Go
+export PATH=$PATH:$HOME/go/bin
+
+eval $(thefuck --alias)
