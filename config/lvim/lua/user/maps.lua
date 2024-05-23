@@ -6,10 +6,10 @@ local wk = lvim.builtin.which_key
 -- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- Move highlighted lines
-lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
-lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- lvim.keys.visual_mode["J"] = ":m '>+1<CR>gv=gv"
+-- lvim.keys.visual_mode["K"] = ":m '<-2<CR>gv=gv"
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- keep cursor in place when joining next line
 -- vim.keymap.set("n", "J", "mzJ`z")
