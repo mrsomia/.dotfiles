@@ -85,6 +85,15 @@ lvim.plugins = {
     },
     ft = { "fugitive" }
   },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",         -- required
+      "sindrets/diffview.nvim",        -- optional - Diff integration
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true
+  },
   -- { 'jose-elias-alvarez/typescript.nvim' }, -- typescript?
   {
     "windwp/nvim-ts-autotag",
@@ -92,14 +101,6 @@ lvim.plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
-  -- {
-  --   "stevearc/dressing.nvim",
-  --   config = function()
-  --     require("dressing").setup({
-  --       input = { enabled = false },
-  --     })
-  --   end,
-  -- },
   -- {
   --   "nvim-neorg/neorg",
   --   ft = "norg", -- lazy-load on filetype
