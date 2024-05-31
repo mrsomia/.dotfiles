@@ -8,7 +8,7 @@ reload("user.lsp")
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = { "*.lua", "*.ts", "*.tsx", "*.js", "*.jsx" },
+  pattern = { "*.lua", "*.ts", "*.tsx", "*.js", "*.jsx", "*.go" },
   timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
