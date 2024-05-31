@@ -101,9 +101,9 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # My aliases
 alias ll="ls -lahL"
-alias l="exa -al --git"
-alias lt="exa -al --git --tree --git-ignore -I .git --level 2"
-alias ltt="exa -al --git --tree --git-ignore -I .git"
+alias l="exa -lahl --git"
+alias lt="exa -lahl --git --tree --git-ignore -I .git --level 2"
+alias ltt="exa -lahl --git --tree --git-ignore -I .git"
 alias treegi="tree --gitignore"
 alias con="tail -40 -f /var/log/system.log"
 alias vs="open -a 'Visual Studio Code'"
