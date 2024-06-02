@@ -12,9 +12,9 @@ alias ...="cd ../.."
 
 # My aliases
 alias ll="ls -lahL"
-alias l="exa -lahl --git"
-alias lt="exa -lahl --git --tree --git-ignore -I .git --level 2"
-alias ltt="exa -lahl --git --tree --git-ignore -I .git"
+alias l="eza -lahl --git"
+alias lt="eza -lahl --git --tree --git-ignore -I .git --level 2"
+alias ltt="eza -lahl --git --tree --git-ignore -I .git"
 alias treegi="tree --gitignore"
 alias con="tail -40 -f /var/log/system.log"
 alias sublime="open -a 'Sublime Text'"
