@@ -7,7 +7,8 @@ eval "$(starship init zsh)"
 
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias ..="cd .."
+alias ...="cd ../.."
 
 # My aliases
 alias ll="ls -lahL"
