@@ -16,12 +16,12 @@ then
         fd -H --type f --exclude "node_modules" --exclude ".git/*" |
           fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
           --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down |
-          xargs lvim -
+          xargs -o lvim
     else
         fd -H --type f --exclude "node_modules" --exclude ".git/*" |
           fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
-          --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down
-        exit
+          --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down |
+          xargs -o lvim
     fi
 else
     if [ -d "${PASSED}" ] ; then
@@ -29,12 +29,12 @@ else
         fd -H --type f --exclude "node_modules" --exclude ".git/*" --full-path "$PASSED" |
           fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
           --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down |
-          xargs lvim -
+          xargs -o lvim
     else
         # if not a dir uses the search term for the search
         fd -H --type f --exclude "node_modules" --exclude ".git/*" |
           fzf --preview "bat --color=always {1} --style=numbers" --preview-window=right,65% \
           --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down -q "$PASSED" |
-          xargs lvim -
+          xargs -o lvim
     fi
 fi
