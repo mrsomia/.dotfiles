@@ -5,6 +5,22 @@ export PATH=$HOME/Library/Python/3.9/bin:$HOME/bin:/usr/local/bin:$PATH
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
+# History file for zsh
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+# antidote
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
+bindkey -M viins "\e[A" history-search-backward
+bindkey -M viins "\e[B" history-search-forward
+
+bindkey -M viins '^P' history-beginning-search-backward
+bindkey -M viins '^N' history-beginning-search-forward
+bindkey '^O' accept-line
+
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
 alias ..="cd .."
