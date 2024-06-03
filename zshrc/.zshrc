@@ -104,6 +104,7 @@ eval "$(zoxide init zsh)"
 
 # fzf completions
 source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules'
 
 # For NVM
 # export NVM_DIR="$HOME/.nvm"
