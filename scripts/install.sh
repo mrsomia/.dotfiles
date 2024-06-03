@@ -8,7 +8,8 @@ echo Installing HomeBrew
 
 echo Installing utils
 brew install bat exa fd fzf git gh gum jq neovim nvm postgresql python ripgrep\
-  sqlite stow tmux trash tree tree-sitter wget xz xh zoxide pyenv go lazygit
+  sqlite stow tmux trash tree tree-sitter wget xz xh zoxide pyenv go lazygit\
+  antidote starship
 
 brew install --cask raycast
 
@@ -23,7 +24,7 @@ pnpm add -g typescript typescript-language-server tsx netlify-cli vercel
 # echo installing pyright server
 # pip3 install pyright
 
-echo Installing packer so that neovim can install packages
+echo Installing lunarvim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 gh auth login
