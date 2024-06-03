@@ -96,6 +96,9 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,65% |
 # . /opt/homebrew/etc/profile.d/z.sh
 eval "$(zoxide init zsh)"
 
+# fzf completions
+source <(fzf --zsh)
+
 # For NVM
 # export NVM_DIR="$HOME/.nvm"
 #   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
