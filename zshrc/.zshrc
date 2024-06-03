@@ -20,8 +20,13 @@ setopt SHARE_HISTORY
 bindkey -M viins "\e[A" history-search-backward
 bindkey -M viins "\e[B" history-search-forward
 
+# emacs terminal keybinds I'm too used too
 bindkey -M viins '^P' history-beginning-search-backward
 bindkey -M viins '^N' history-beginning-search-forward
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
+bindkey -M viins 'ESC-F' forward-word
+bindkey -M viins 'ESC-B' backward-word
 bindkey '^O' accept-line
 
 # Example aliases
