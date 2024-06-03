@@ -1,6 +1,14 @@
+# pretty much default
 zsh-users/zsh-completions
-
-# belak/zsh-utils path:editor
 zsh-users/zsh-syntax-highlighting
-# zsh-users/zsh-autosuggestions
+
+# https://github.com/belak/zsh-utils
+belak/zsh-utils path:editor
+belak/zsh-utils path:history
+belak/zsh-utils path:prompt
+belak/zsh-utils path:utility
+belak/zsh-utils path:completion
+
+# nice
+zsh-users/zsh-autosuggestions
 zsh-users/zsh-history-substring-search
