@@ -16,14 +16,13 @@ SAVEHIST=10000
 # Share history in every terminal session
 setopt SHARE_HISTORY
 
+# bindkey -e emacs mode
+bindkey -M viins "\e[A" history-search-backward
+bindkey -M viins "\e[B" history-search-forward
 
-bindkey -e
-bindkey -M emacs "\e[A" history-search-backward
-bindkey -M emacs "\e[B" history-search-forward
-
-bindkey -M emacs '^P' history-beginning-search-backward
-bindkey -M emacs '^N' history-beginning-search-forward
-# bindkey '^O' accept-line
+bindkey -M viins '^P' history-beginning-search-backward
+bindkey -M viins '^N' history-beginning-search-forward
+bindkey '^O' accept-line
 
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
