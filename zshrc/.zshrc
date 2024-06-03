@@ -35,7 +35,7 @@ bindkey -M viins 'ESC-B' backward-word
 bindkey '^O' accept-line
 
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 alias ..="cd .."
 alias ...="cd ../.."
 
