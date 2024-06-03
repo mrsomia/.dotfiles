@@ -9,6 +9,8 @@ eval "$(starship init zsh)"
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+# Share history in every terminal session
+setopt SHARE_HISTORY
 
 # antidote
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
