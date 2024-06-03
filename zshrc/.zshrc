@@ -15,12 +15,17 @@ HISTSIZE=10000
 SAVEHIST=10000
 # Share history in every terminal session
 setopt SHARE_HISTORY
+# zsh only shows the last 16 history commands by default
+# https://jdhao.github.io/2021/03/24/zsh_history_setup/
+alias history="fc -l 1"
+alias h="fc -l 1"
 
 # bindkey -e emacs mode
 bindkey -M viins "\e[A" history-search-backward
 bindkey -M viins "\e[B" history-search-forward
 
 # emacs terminal keybinds I'm too used too
+# More zsh widgets can be found here: https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
 bindkey -M viins '^P' history-beginning-search-backward
 bindkey -M viins '^N' history-beginning-search-forward
 bindkey -M viins '^A' beginning-of-line
