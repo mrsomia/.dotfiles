@@ -5,6 +5,10 @@ export PATH=$HOME/Library/Python/3.9/bin:$HOME/bin:/usr/local/bin:$PATH
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
+# antidote
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
 # History file for zsh
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -12,9 +16,6 @@ SAVEHIST=10000
 # Share history in every terminal session
 setopt SHARE_HISTORY
 
-# antidote
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-antidote load
 
 bindkey -e
 bindkey -M emacs "\e[A" history-search-backward
