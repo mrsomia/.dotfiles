@@ -85,6 +85,8 @@ alias gbD="git branch --delete --force"
 
 alias gm="git merge"
 
+alias ggl="git pull"
+
 alias grba="git rebase --abort"
 alias grbc="git rebase --continue"
 alias grbi="git rebase --interactive"
