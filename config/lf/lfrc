@@ -1,0 +1,9 @@
+set hidden true
+set icons true
+set number true
+set ignorecase true
+# set preview
+set previewer ~/.dotfiles/config/lf/lf-previewer.sh
+set relativenumber
+
+set promptfmt "\033[34;1m%d\033[0m\033[1m%f\033[0m"
