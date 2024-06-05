@@ -21,6 +21,7 @@ alias history="fc -l 1"
 alias h="fc -l 1"
 
 # bindkey -e emacs mode
+bindkey -v # vim mode
 bindkey -M viins "\e[A" history-search-backward
 bindkey -M viins "\e[B" history-search-forward
 
