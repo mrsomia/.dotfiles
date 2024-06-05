@@ -33,6 +33,9 @@ disabled = true
 [java]
 disabled = true
 
+[git_status]
+stashed = '' # default is '$
+
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
