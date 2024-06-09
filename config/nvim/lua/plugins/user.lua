@@ -1,7 +1,20 @@
 return {
-
   { "ThePrimeagen/harpoon" },
-  { "christoomey/vim-tmux-navigator" },
+  -- Lazy loads the tmux navigator plugin
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = true,
+    keys = {
+      { "<c-Left>", "<cmd>TmuxNavigateLeft<cr>" },
+      { "<c-Down>", "<cmd>TmuxNavigateDown<cr>" },
+      { "<c-Up>", "<cmd>TmuxNavigateUp<cr>" },
+      { "<c-Right>", "<cmd>TmuxNavigateRight<cr>" },
+      { "<c-h>" },
+      { "<c-j>" },
+      { "<c-k>" },
+      { "<c-l>" },
+    },
+  },
   { "mbbill/undotree" },
   {
     "tpope/vim-fugitive",
