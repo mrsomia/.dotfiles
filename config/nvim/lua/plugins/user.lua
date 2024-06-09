@@ -88,15 +88,24 @@ return {
     },
   },
 
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load catppuccin
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "catppuccin",
     },
   },
+  -- moves neotree to the right
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      window = {
+        position = "right",
+      },
+    },
+  },
 
-  -- add pyright to lspconfig
+  -- add to lspconfig
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
