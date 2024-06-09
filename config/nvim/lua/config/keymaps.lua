@@ -40,5 +40,5 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<leader>U", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" })
 
-vim.keymap.set("n", "<leader>gs", "<cmd>Neogit<cr>")
+vim.keymap.set("n", "<leader>gn", "<cmd>Neogit<cr>")
 vim.keymap.set("n", "<leader>gS", "<cmd>Gitsigns<cr>")
