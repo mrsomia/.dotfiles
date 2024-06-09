@@ -1,5 +1,60 @@
 return {
-  { "ThePrimeagen/harpoon" },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>m", "", desc = "+harpoon" },
+      {
+        "<leader>mm",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():add()
+        end,
+        desc = "Add file",
+      },
+      {
+        "<leader>mt",
+        function()
+          local harpoon = require("harpoon")
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "toggle ui",
+      },
+      {
+        "<leader>ma",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(1)
+        end,
+        desc = "go to first mark",
+      },
+      {
+        "<leader>ms",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(2)
+        end,
+        desc = "go to second mark",
+      },
+      {
+        "<leader>md",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(3)
+        end,
+        desc = "go to third mark",
+      },
+      {
+        "<leader>mf",
+        function()
+          local harpoon = require("harpoon")
+          harpoon:list():select(4)
+        end,
+        desc = "go to fourth mark",
+      },
+    },
+  },
   -- Lazy loads the tmux navigator plugin
   {
     "christoomey/vim-tmux-navigator",
