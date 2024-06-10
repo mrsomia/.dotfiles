@@ -17,3 +17,5 @@
 	sort = -committerdate
 [diff]
 	algorithm = histogram
+[includeIf "gitdir:~/dev/work/"]
+path = "./work-config"

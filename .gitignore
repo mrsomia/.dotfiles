@@ -1,3 +1,4 @@
 .DS_store
 config/tmux/plugins
+config/git/work-config
 config/sql-language-server/.sqllsrc.json
