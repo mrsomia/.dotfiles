@@ -13,8 +13,16 @@ antidote load
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+HISTDUP=erase
+setopt appendhistory
 # Share history in every terminal session
-setopt SHARE_HISTORY
+setopt sharehistory
+
+setopt hist_ignore_space # allows commands prefixed with a space to be ignored
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 # zsh only shows the last 16 history commands by default
 # https://jdhao.github.io/2021/03/24/zsh_history_setup/
 alias history="fc -l 1"
@@ -94,6 +102,7 @@ alias grbc="git rebase --continue"
 alias grbi="git rebase --interactive"
 
 alias gll="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all"
+alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
 
 alias gwipe="git reset --hard && git clean --force -df"
 alias grhh="git reset --hard"
@@ -106,6 +115,18 @@ alias cat="bat"
 
 # tldr
 alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,65% | xargs tldr'
+
+# match lowercase/uppercase dirs
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# show dirs/files with coloured output
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# use fzf for completion
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# required for coloured completeion output
+alias ls='ls --color'
 
 # run z
 # . /opt/homebrew/etc/profile.d/z.sh
