@@ -13,4 +13,5 @@ belak/zsh-utils path:completion
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search kind:defer
 
+Aloxaf/fzf-tab kind:defer
 # vim: ft=zsh sw=2 ts=2 et

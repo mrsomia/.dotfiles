@@ -120,7 +120,7 @@ alias tldrf='tldr --list | fzf --preview "tldr {1}" --preview-window=right,65% |
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # show dirs/files with coloured output
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# use fzf for completion
+# use fzf-tab for completion
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
