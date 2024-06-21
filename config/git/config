@@ -18,4 +18,4 @@
 [diff]
 	algorithm = histogram
 [includeIf "gitdir:~/dev/work/"]
-path = "./work-config"
+  path = "./work-config"
