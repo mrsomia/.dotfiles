@@ -43,7 +43,7 @@ bindkey -M viins 'ESC-F' forward-word
 bindkey -M viins 'ESC-B' backward-word
 bindkey '^O' accept-line
 
-# Example aliases
+# aliases
 alias zshconfig="vim ~/.zshrc"
 alias ..="cd .."
 alias ...="cd ../.."
@@ -58,7 +58,7 @@ alias treegi="tree --gitignore"
 alias con="tail -40 -f /var/log/system.log"
 alias sublime="open -a 'Sublime Text'"
 alias subl="open -a 'Sublime Text'"
-alias c="code" # require running VSCode's install code command
+alias c="clear"
 alias lg="lazygit"
 
 alias sz="source ~/.zshrc"
