@@ -1,3 +1,6 @@
+# prompt
+romkatv/powerlevel10k
+
 # pretty much default
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
