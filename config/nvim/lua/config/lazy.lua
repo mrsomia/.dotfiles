@@ -19,6 +19,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.svelte" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.dap.core" },
+    { import = "lazyvim.plugins.extras.lang.sql" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
     -- import/override with your plugins
