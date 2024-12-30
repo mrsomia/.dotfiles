@@ -136,6 +136,9 @@ alias ls='ls --color'
 # . /opt/homebrew/etc/profile.d/z.sh
 eval "$(zoxide init zsh)"
 
+# uv completions
+eval "$(uv generate-shell-completion zsh)"
+
 # fzf completions
 source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules'
