@@ -1,0 +1,15 @@
+# vi: ft=conf
+window-height=55
+window-width=175
+
+# Usability
+copy-on-select = clipboard
+shell-integration = zsh
+macos-non-native-fullscreen = true
+# macos-option-as-alt = true
+macos-titlebar-style = "tabs"
+
+# Closing out tabs / windows
+confirm-close-surface = false
+quit-after-last-window-closed = true
+
