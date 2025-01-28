@@ -5,11 +5,11 @@ window-width=175
 # Usability
 copy-on-select = clipboard
 shell-integration = zsh
-macos-non-native-fullscreen = true
-# macos-option-as-alt = true
-macos-titlebar-style = "tabs"
+# macos-non-native-fullscreen = true
 
 # Closing out tabs / windows
 confirm-close-surface = false
 quit-after-last-window-closed = true
 
+# Disable ligatures
+font-feature = -calt
