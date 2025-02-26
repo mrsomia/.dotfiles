@@ -13,3 +13,5 @@ quit-after-last-window-closed = true
 
 # Disable ligatures
 font-feature = -calt
+
+keybind = global:cmd+shift+grave_accent=toggle_quick_terminal
