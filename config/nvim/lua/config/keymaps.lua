@@ -44,3 +44,6 @@ vim.keymap.set("n", "<leader>U", "<cmd>UndotreeToggle<cr>", { desc = "Undotree" 
 
 vim.keymap.set("n", "<leader>gn", "<cmd>Neogit<cr>")
 vim.keymap.set("n", "<leader>gS", "<cmd>Gitsigns<cr>")
+
+vim.keymap.set("n", "<leader>ghj", "<cmd>Gitsigns next_hunk<cr>")
+vim.keymap.set("n", "<leader>ghk", "<cmd>Gitsigns prev_hunk<cr>")
