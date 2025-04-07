@@ -20,7 +20,7 @@ vim.keymap.set("n", "*", "*zz", { desc = "Search and center screen" })
 
 -- greatest remap ever
 -- let's you paste but not add the pasted over text to the last register
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "paste from system clipboard" })
 
 -- next greatest remap ever : asbjornHaland
 -- let's you copy to system clipboard
