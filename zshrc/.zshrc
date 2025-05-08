@@ -71,6 +71,7 @@ alias nv="nvim"
 alias vim="nvim"
 alias ff="$HOME/.dotfiles/scripts/ff.sh"
 alias fs="$HOME/.dotfiles/scripts/ff.sh"
+alias tlock="osascript -e 'tell app \"loginwindow\" to «event aevtsclk»'"
 
 # Git
 alias gs="git status"
