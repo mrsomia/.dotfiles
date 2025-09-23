@@ -109,6 +109,28 @@ return {
       vim.g.db_ui_use_nerd_fonts = 1
     end,
   },
+  -- add to lspconfig
+  {
+    "neovim/nvim-lspconfig",
+    ---@class PluginLspOpts
+    opts = {
+      ---@type lspconfig.options
+      servers = {
+        -- pyright will be automatically installed with mason and loaded with lspconfig
+        pyright = {},
+        gopls = {},
+        sourcekit = {
+          capabilities = {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+        },
+      },
+    },
+  },
   -- catppuccin
   {
     "catppuccin/nvim",
