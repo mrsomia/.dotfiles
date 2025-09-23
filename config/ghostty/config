@@ -15,3 +15,4 @@ quit-after-last-window-closed = true
 font-feature = -calt
 
 keybind = global:cmd+shift+grave_accent=toggle_quick_terminal
+keybind = shift+enter=text:\n
