@@ -181,6 +181,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Go
 export PATH=$PATH:$HOME/go/bin
 
+# Java
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+
 [[ ! -f ~/.work.zsh ]] || source ~/.work.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
