@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/Library/Python/3.9/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # antidote
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
@@ -46,6 +46,14 @@ bindkey -M viins 'ESC-F' forward-word
 bindkey -M viins 'ESC-B' backward-word
 bindkey '^O' accept-line
 
+# Expand search
+bindkey ' ' magic-space
+
+# Open buffer line in editor
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
 # aliases
 alias zshconfig="vim ~/.zshrc"
 alias ..="cd .."
@@ -63,6 +71,8 @@ alias con="tail -40 -f /var/log/system.log"
 alias sublime="open -a 'Sublime Text'"
 alias subl="open -a 'Sublime Text'"
 alias lg="lazygit"
+
+alias k="kubectl"
 
 alias sz="source ~/.zshrc"
 alias prd="pnpm run dev"
@@ -184,6 +194,57 @@ export PATH=$PATH:$HOME/go/bin
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
 
+# To merge hooks, use add-zsh-hook
+autoload -Uz add-zsh-hook
+
+
+# Then Define separate functions
+function auto_venv() {
+  # If already in a virtualenv, do nothing
+  if [[ -n "$VIRTUAL_ENV" && ! -f "$VIRTUAL_ENV/bin/activate" ]]; then
+    deactivate
+  fi
+
+  [[ -n "$VIRTUAL_ENV" ]] && return
+
+  local dir="$PWD"
+  while [[ "$dir" != "/" ]]; do
+    if [[ -f "$dir/.venv/bin/activate" ]]; then
+      source "$dir/.venv/bin/activate"
+      return
+    fi
+    dir="${dir:h}"
+  done
+}
+
+function auto_nvm() {
+  [[ -f .nvmrc ]] && nvm use
+}
+
+# Register them all
+add-zsh-hook chpwd auto_venv
+add-zsh-hook chpwd auto_nvm
+
+# Clear screen but keep current command buffer
+function clear-screen-and-scrollback() {
+  echoti civis >"$TTY"
+  printf '%b' '\e[H\e[2J\e[3J' >"$TTY"
+  echoti cnorm >"$TTY"
+  zle redisplay
+}
+zle -N clear-screen-and-scrollback
+bindkey '^X^L' clear-screen-and-scrollback
+
+# Copy current command buffer to clipboard (macOS)
+function copy-buffer-to-clipboard() {
+  echo -n "$BUFFER" | pbcopy
+  zle -M "Copied to clipboard"
+}
+zle -N copy-buffer-to-clipboard
+bindkey '^X^C' copy-buffer-to-clipboard
+
+# better than mv
+autoload zmv
 
 [[ ! -f ~/.work.zsh ]] || source ~/.work.zsh
 
