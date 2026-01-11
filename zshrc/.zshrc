@@ -52,7 +52,7 @@ bindkey ' ' magic-space
 # Open buffer line in editor
 autoload -Uz edit-command-line
 zle -N edit-command-line
-bindkey '^X^E' edit-command-line
+bindkey '^Xe' edit-command-line
 
 # aliases
 alias zshconfig="vim ~/.zshrc"
@@ -233,7 +233,7 @@ function clear-screen-and-scrollback() {
   zle redisplay
 }
 zle -N clear-screen-and-scrollback
-bindkey '^X^L' clear-screen-and-scrollback
+bindkey '^Xl' clear-screen-and-scrollback
 
 # Copy current command buffer to clipboard (macOS)
 function copy-buffer-to-clipboard() {
@@ -241,7 +241,7 @@ function copy-buffer-to-clipboard() {
   zle -M "Copied to clipboard"
 }
 zle -N copy-buffer-to-clipboard
-bindkey '^X^C' copy-buffer-to-clipboard
+bindkey '^Xc' copy-buffer-to-clipboard
 
 # better than mv
 autoload zmv
