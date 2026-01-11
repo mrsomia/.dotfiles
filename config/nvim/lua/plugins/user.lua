@@ -102,12 +102,18 @@ return {
     "NeogitOrg/neogit",
     dependencies = {
       "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
+      -- "sindrets/diffview.nvim", -- optional - Diff integration
+      "esmuellert/codediff.nvim", -- optional - Diff integration
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = true,
   },
 
+  {
+    "esmuellert/codediff.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    cmd = "CodeDiff",
+  },
   -- DB intergration
   {
     "kristijanhusak/vim-dadbod-ui",
