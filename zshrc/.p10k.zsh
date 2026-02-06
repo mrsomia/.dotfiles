@@ -28,6 +28,13 @@
 [[ ! -o 'no_brace_expand' ]] || p10k_config_opts+=('no_brace_expand')
 'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
 
+function prompt_my_zmx_session() {
+  if [[ -n $ZMX_SESSION ]]; then
+    p10k segment -b '%k' -f '%f' -t "[$ZMX_SESSION]"
+  fi
+}
+
+
 () {
   emulate -L zsh -o extended_glob
 
@@ -66,6 +73,7 @@
     virtualenv                # python virtual environment
     context                   # user@host
     # time                    # current time
+    my_zmx_session
     # =========================[ Line #2 ]=========================
     newline                   # \n
   )
