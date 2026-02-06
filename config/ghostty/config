@@ -5,6 +5,12 @@ window-width=175
 # Usability
 copy-on-select = clipboard
 shell-integration = zsh
+
+# for resize tmux panes
+macos-option-as-alt = left
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+
 # macos-non-native-fullscreen = true
 
 # Closing out tabs / windows
