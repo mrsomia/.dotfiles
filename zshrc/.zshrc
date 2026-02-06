@@ -101,6 +101,8 @@ alias gss="git status --short -b"
 alias gd="git diff"
 
 alias gswm="git switch main"
+alias gswe="git switch edge"
+alias gswd="git switch develop"
 alias gsw="git switch "
 alias gswc="git switch -c"
 
@@ -193,6 +195,9 @@ export PATH=$PATH:$HOME/go/bin
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Activate mise-en-place see: https://mise.jdx.dev/installing-mise.html
+eval "$(mise activate zsh)"
 
 # To merge hooks, use add-zsh-hook
 autoload -Uz add-zsh-hook
