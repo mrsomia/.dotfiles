@@ -47,3 +47,17 @@ vim.keymap.set("n", "<leader>gS", "<cmd>Gitsigns<cr>")
 
 vim.keymap.set("n", "<leader>ghj", "<cmd>Gitsigns next_hunk<cr>")
 vim.keymap.set("n", "<leader>ghk", "<cmd>Gitsigns prev_hunk<cr>")
+
+-- copy filename
+vim.keymap.set("n", "<leader>fy", function()
+  local filepath = vim.fn.expand("%")
+  local lineNumber = vim.fn.line(".")
+  vim.fn.setreg("+", string.format("%s:%d", filepath, lineNumber))
+end, { desc = "Copy file path with line number" })
+
+-- copy absolute filename
+vim.keymap.set("n", "<leader>fY", function()
+  local filepath = vim.fn.expand("%:p")
+  local lineNumber = vim.fn.line(".")
+  vim.fn.setreg("+", string.format("%s:%d", filepath, lineNumber))
+end, { desc = "Copy absolute file path with line number" })
