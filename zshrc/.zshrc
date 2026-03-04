@@ -199,6 +199,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Activate mise-en-place see: https://mise.jdx.dev/installing-mise.html
 eval "$(mise activate zsh)"
 
+# Worktrunk
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+
 # To merge hooks, use add-zsh-hook
 autoload -Uz add-zsh-hook
 
