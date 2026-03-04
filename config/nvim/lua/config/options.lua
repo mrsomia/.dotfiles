@@ -10,3 +10,9 @@ vim.g.snacks_animate = false
 vim.g.lazyvim_python_lsp = "basedpyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 -- vim.g.lazyvim_python_ruff = "ruff"
+
+-- LSP Server to use for Rust.
+-- Set to "bacon-ls" to use bacon-ls instead of rust-analyzer.
+-- only for diagnostics. The rest of LSP support will still be
+-- provided by rust-analyzer.
+-- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
