@@ -1,0 +1,9 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[ui]
+pager = ["delta", "--side-by-side", "--line-numbers", "--navigate"]
+diff-formatter = ":git"
+
+[user]
+name = "Sachin Somia"
+email = "sachinsomia@gmail.com"
