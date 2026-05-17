@@ -254,6 +254,10 @@ bindkey '^Xc' copy-buffer-to-clipboard
 # better than mv
 autoload zmv
 
+# jj autocomplete
+source <(COMPLETE=zsh jj)
+alias lj=jjui
+
 [[ ! -f ~/.work.zsh ]] || source ~/.work.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

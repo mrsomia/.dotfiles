@@ -7,3 +7,6 @@ diff-formatter = ":git"
 [user]
 name = "Sachin Somia"
 email = "sachinsomia@gmail.com"
+
+[templates]
+git_push_bookmark = '"sach/push-" ++ change_id.short()'
