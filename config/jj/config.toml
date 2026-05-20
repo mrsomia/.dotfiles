@@ -11,3 +11,12 @@ email = "sachinsomia@gmail.com"
 
 [templates]
 git_push_bookmark = '"sach/push-" ++ change_id.short()'
+
+[revsets]
+log = "present(@) | ancestors(immutable_heads().., 2) | trunk()" # Default
+
+[revset-aliases]
+llog = "present(@) | ancestors(remote_bookmarks().., 2) | trunk()"
+
+[aliases]
+ll = ["log", "-r", "llog"]

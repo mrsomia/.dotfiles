@@ -257,6 +257,7 @@ autoload zmv
 # jj autocomplete
 source <(COMPLETE=zsh jj)
 alias lj=jjui
+alias jd="jj diff"
 
 [[ ! -f ~/.work.zsh ]] || source ~/.work.zsh
 
