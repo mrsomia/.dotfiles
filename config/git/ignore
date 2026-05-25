@@ -1,5 +1,6 @@
 .DS_Store
 .scratch/*
 **/*.ignore
+.jj
 
 **/.claude/settings.local.json
