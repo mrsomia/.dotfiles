@@ -16,7 +16,30 @@ git_push_bookmark = '"sach/push-" ++ change_id.short()'
 log = "present(@) | ancestors(immutable_heads().., 2) | trunk()" # Default
 
 [revset-aliases]
-llog = "present(@) | ancestors(remote_bookmarks().., 2) | trunk()"
+llog = "present(@) | ancestors((remote_bookmarks(remote='git | origin') ~ remote_tags()).., 2) | trunk()"
+remote_log = "present(@) | ancestors(remote_bookmarks(remote='git | origin').., 2) | trunk()"
+'all_empty()' = '(empty() ~ merges() ~ root()) & description(exact:"")'
+'in_flight()' = '@ | ancestors(trunk()..(visible_heads() & mine()), 2) | trunk()'
+
+'closest_pushable(to)' = 'heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))'
+'closest_pushable()' = 'closest_pushable(@)'
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'closest_bookmark()' = 'closest_bookmark(@)'
 
 [aliases]
 ll = ["log", "-r", "llog"]
+llt = ["log", "-r", "remote_log"]
+d = ["diff", "--tool", ":color-words"]
+pr = [
+  "util",
+  "exec",
+  "--",
+  "bash",
+  "-c",
+  """
+gh pr create --head $(jj log -r 'closest_bookmark(@)' -T 'bookmarks' --no-graph | cut -d ' ' -f 1)
+""",
+]
+
+[jj-hooks]
+advance-bookmarks = true
