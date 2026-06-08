@@ -12,6 +12,7 @@ email = "sachinsomia@gmail.com"
 [templates]
 git_push_bookmark = '"sach/push-" ++ change_id.short()'
 
+# https://andre.arko.net/2025/09/28/stupid-jj-tricks/
 draft_commit_description = '''
   concat(
     coalesce(description, default_commit_description, "\n"),
@@ -42,6 +43,8 @@ remote_log = "present(@) | ancestors(remote_bookmarks(remote='git | origin').., 
 ll = ["log", "-r", "llog"]
 llt = ["log", "-r", "remote_log"]
 d = ["diff", "--tool", ":color-words"]
+
+# https://andre.arko.net/2025/09/28/stupid-jj-tricks/
 pr = [
   "util",
   "exec",
