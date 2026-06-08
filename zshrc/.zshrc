@@ -61,12 +61,12 @@ alias ...="cd ../.."
 
 # My aliases
 alias c="clear"
+alias t="tmux new-session -A -s main"
 alias ll="ls -lahL"
 alias l="eza -lah --git"
 alias lt="eza -lah --git --tree --git-ignore -I .git --level 2"
 alias ltt="eza -lah --git --tree --git-ignore -I .git --level 3"
 alias lttt="eza -lah --git --tree --git-ignore -I .git"
-alias treegi="tree --gitignore"
 alias con="tail -40 -f /var/log/system.log"
 alias sublime="open -a 'Sublime Text'"
 alias subl="open -a 'Sublime Text'"
@@ -150,22 +150,40 @@ alias ls='ls --color'
 # . /opt/homebrew/etc/profile.d/z.sh
 eval "$(zoxide init zsh)"
 
-# uv completions
-eval "$(uv generate-shell-completion zsh)"
+# lazy loading trick https://mijndertstuij.nl/posts/life-is-too-short-for-a-slow-terminal/
+kubectl() {
+    command kubectl "$@"
+    local ret=$?
+    if [[ -z $SACH_KUBECTL_COMPLETE ]]; then
+        source <(command kubectl completion zsh)
+        SACH_KUBECTL_COMPLETE=1
+    fi
+    return $ret
+}
+
+# lazy load uv completions
+# lazy loading trick https://mijndertstuij.nl/posts/life-is-too-short-for-a-slow-terminal/
+uv() {
+  unset -f uv
+  eval "$(uv generate-shell-completion zsh)"
+  uv "$@"
+}
 
 # fzf completions
 source <(fzf --zsh)
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules'
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude .jj --exclude node_modules'
 
 # For NVM
 # export NVM_DIR="$HOME/.nvm"
 #   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 #   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # Added after internal homebrew fork installed
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-[[ -d /opt/homebrew/share/zsh/site-functions ]] && fpath+=(/opt/homebrew/share/zsh/site-functions)
+#
+# Commented out - trying mise instead
+# export NVM_DIR="$HOME/.nvm"
+#   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+#   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# [[ -d /opt/homebrew/share/zsh/site-functions ]] && fpath+=(/opt/homebrew/share/zsh/site-functions)
 
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -200,7 +218,11 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 eval "$(mise activate zsh)"
 
 # Worktrunk
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+wt() {
+  unset -f wt
+  if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+  wt "$@"
+}
 
 # To merge hooks, use add-zsh-hook
 autoload -Uz add-zsh-hook
