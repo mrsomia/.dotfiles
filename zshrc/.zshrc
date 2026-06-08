@@ -169,6 +169,10 @@ uv() {
   uv "$@"
 }
 
+tt() {
+  sesh connect "$(sesh list | fzf)"
+}
+
 # fzf completions
 source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude .jj --exclude node_modules'
@@ -215,7 +219,11 @@ export PATH=$PATH:$HOME/go/bin
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Activate mise-en-place see: https://mise.jdx.dev/installing-mise.html
-eval "$(mise activate zsh)"
+mise() {
+  unset -f mise
+  eval "$(mise activate zsh)"
+  mise "$@"
+}
 
 # Worktrunk
 wt() {
