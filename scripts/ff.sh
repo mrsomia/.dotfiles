@@ -1,31 +1,23 @@
 #!/usr/bin/env bash
 #
-# IDEA: Adds an optional argument
-# If it's a dir, search the dir
-# else search the current dir for that file
+# Fuzzy file finder. Open pick in nvim.
+# No args: search cwd. Arg is dir: scope to it. Else: use as fzf query.
 
-PASSED=$1
-PREVIEW_CMD="bat --color=always {1} --style=numbers"
-FILE_NAME=""
+set -euo pipefail
 
-if [ $# -eq 0 ]; then
-  FILE_NAME=$(fd -H --type f --exclude "node_modules" --exclude ".git/*" --exclude ".jj/*" |
-    fzf --preview "$PREVIEW_CMD" --preview-window=right,65% \
-      --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down)
+FD=(fd -H --type f --exclude node_modules --exclude .git --exclude .jj)
+FZF=(fzf
+  --preview 'bat --color=always {} --style=numbers'
+  --preview-window=right,65%
+  --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down)
+
+arg=${1-}
+if [[ -d $arg ]]; then
+  file=$("${FD[@]}" . "$arg" | "${FZF[@]}")
 else
-  if [ -d "${PASSED}" ]; then
-    # if the passed arg is a dir, searches within that dir and passes this into nvim
-    FILE_NAME=$(fd -H --type f --exclude "node_modules" --exclude ".git/*" --exclude ".jj/*" --full-path "$PASSED" |
-      fzf --preview "$PREVIEW_CMD" --preview-window=right,65% \
-        --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down)
-  else
-    # if not a dir uses the search term for the search
-    FILE_NAME=$(fd -H --type f --exclude "node_modules" --exclude ".git/*" --exclude ".jj/*" |
-      fzf --preview "$PREVIEW_CMD" --preview-window=right,65% \
-        --bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down -q "$PASSED")
-  fi
+  fzf_args=("${FZF[@]}")
+  [[ -n $arg ]] && fzf_args+=(-q "$arg")
+  file=$("${FD[@]}" | "${fzf_args[@]}")
 fi
 
-if [[ -n $FILE_NAME ]]; then
-  nvim "$FILE_NAME"
-fi
+[[ -n $file ]] && exec nvim "$file"
