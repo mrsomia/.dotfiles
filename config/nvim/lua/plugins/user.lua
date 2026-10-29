@@ -241,4 +241,24 @@ return {
       })
     end,
   },
+
+  -- JJ.nvim
+  {
+    "nicolasgb/jj.nvim",
+    version = "*", -- Use latest stable release
+    -- Or from the main branch (uncomment the branch line and comment the version line)
+    -- branch = "main",
+    config = function()
+      require("jj").setup({})
+    end,
+  },
+  -- lua/plugins/jjui.lua
+  {
+    "ReKylee/jjui.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    -- `opts` will be passed to the setup function automatically
+    opts = {
+      -- your custom options here
+    },
+  },
 }
