@@ -1,0 +1,5 @@
+[preview]
+position = "right"               # auto | right | bottom
+show_at_start = false
+width_percentage = 50.0
+width_increment_percentage = 5.0
