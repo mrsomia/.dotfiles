@@ -63,10 +63,18 @@ alias ...="cd ../.."
 alias c="clear"
 alias t="tmux new-session -A -s main"
 alias ll="ls -lahL"
+
 alias l="eza -lah --git"
-alias lt="eza -lah --git --tree --git-ignore -I .git --level 2"
-alias ltt="eza -lah --git --tree --git-ignore -I .git --level 3"
-alias lttt="eza -lah --git --tree --git-ignore -I .git"
+alias ezatreebase="eza -lah --git --tree --icons"
+alias littt="ezatreebase --git-ignore"
+alias ezatreebase_no_vcs="ezatreebase --ignore-glob='.git|.jj'"
+alias lit="littt --level 2"
+alias litt="littt --level 3"
+
+alias lttt="ezatreebase --ignore-glob='.git|.jj'"
+alias lt="lttt --level 2"
+alias ltt="lttt --level 3"
+
 alias con="tail -40 -f /var/log/system.log"
 alias sublime="open -a 'Sublime Text'"
 alias subl="open -a 'Sublime Text'"
@@ -146,6 +154,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # required for coloured completeion output
 alias ls='ls --color'
 
+alias cc="claude"
+
 # run z
 # . /opt/homebrew/etc/profile.d/z.sh
 eval "$(zoxide init zsh)"
@@ -189,8 +199,13 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --e
 #   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # [[ -d /opt/homebrew/share/zsh/site-functions ]] && fpath+=(/opt/homebrew/share/zsh/site-functions)
 
+# pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
 
 # Deno
 export DENO_INSTALL="/Users/sach/.deno"
