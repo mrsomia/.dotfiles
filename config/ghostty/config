@@ -1,6 +1,6 @@
 # vi: ft=conf
 window-height=55
-window-width=175
+window-width=195
 
 # Usability
 copy-on-select = clipboard
